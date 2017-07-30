@@ -7,7 +7,7 @@ exports.collectRules = function (env) {
     envkeys.sort()
     for (var i = 0; i < envkeys.length; i++) {
         var envkey = envkeys[i];
-        if (envkey.toUpperCase().indexOf('REDIRECT') === 0) {
+        if (envkey.toUpperCase().indexOf('REDIRECT_') === 0) {
             var value = env[envkey];
             var sep = value.indexOf(':');
             var from = value.substr(0, sep);

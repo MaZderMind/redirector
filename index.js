@@ -14,7 +14,9 @@ http.createServer(function (req, res) {
 	var target = funcs.calculateRedirection(rules, full_url);
 	if(target) {
 		console.log(full_url+' -> '+target);
-		res.writeHead(200);
+		res.writeHead(301, {
+			'Location': target
+		});
 		res.end(target);
 	}
 	else
